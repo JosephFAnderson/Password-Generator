@@ -14,12 +14,14 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
-  var passLength = Number(prompt("How long would you like your password? Please enter a number between 8 and 128."));
+  // var passLength = Number(prompt("How long would you like your password? Please enter a number between 8 and 128."));
+  var passLength;
   var invalid = true;
   while(invalid)
   {
+    passLength = Number(prompt("How long would you like your password? Please enter a number between 8 and 128."));
     if(Number.isNaN(passLength) || passLength < 8 || passLength > 128) {
-      passLength = Number(prompt("Please only enter a number between 8 and 128"));
+      alert("Please enter a number between 8 and 128");
     }else{
       invalid = false;
     }
