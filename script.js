@@ -47,11 +47,15 @@ function generatePassword() {
       }
     }
   }
-  
+
   addCriteria(passLowerCase, lowerLetters);
   addCriteria(passUpperCase, capLetters);
   addCriteria(passNumbers, num);
   addCriteria(passSpecial, special);
 
-  return "Hello";
+  for(var i = 0; i < passLength; i++){
+    pass += passCriteria[Math.floor(Math.random() * passCriteria.length)];
+  }
+
+  return pass;
 }
