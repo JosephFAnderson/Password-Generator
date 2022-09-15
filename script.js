@@ -32,10 +32,10 @@ function generatePassword() {
   }while(invalid);
 
   //Set boolean values for other password criteria via confirm windows
-  var passLowerCase = confirm("Would you like to use lowercase?");
-  var passUpperCase = confirm("Would you like to use uppercase?");
-  var passNumbers = confirm("Would you like to use numbers?");  
-  var passSpecial = confirm("Would you like to use special characters?");
+  var passLowerCase = confirm("Would you like to use lowercase? Click Ok for Yes, or Cancel for No");
+  var passUpperCase = confirm("Would you like to use uppercase? Click Ok for Yes, or Cancel for No");
+  var passNumbers = confirm("Would you like to use numbers? Click Ok for Yes, or Cancel for No");  
+  var passSpecial = confirm("Would you like to use special characters? Click Ok for Yes, or Cancel for No");
 
   var passCriteria = [];
 
@@ -59,11 +59,12 @@ function generatePassword() {
   addCriteria(passNumbers, num);
   addCriteria(passSpecial, special);
 
-  //Verify that at least 1 criteria was selected. If none are alert user to try again making sure to select at least 1
+  //Verify that at least 1 criteria was selected. If none are, alert user to try again making sure to select at least 1
   if(passCriteria.length === 0){
     alert("You did not select any criteria. Please try again and make sure to select at least 1 criteria.")
     return "";
   }
+  
   var pass = "";
 
   //Randomly generate password
