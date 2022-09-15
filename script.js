@@ -14,15 +14,13 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
-  var passLength;
   var invalid = true;
 
   /*Generate prompt for password length and check we receive a value that is between 8 and 128 inclusively
   Create alert if user inputs a value outside of expected and return to password length prompt
   */
-  while(invalid)
-  {
-    passLength = prompt("How long would you like your password? Please enter a number between 8 and 128.");
+  do{
+    var passLength = prompt("How long would you like your password? Please enter a number between 8 and 128.");
     if(passLength == null){
       return "";
     }else if(Number.isNaN(Number(passLength)) || passLength < 8 || passLength > 128) {
@@ -31,7 +29,7 @@ function generatePassword() {
       passLength = Number(passLength);
       invalid = false;
     }
-  }
+  }while(invalid);
 
   //Set boolean values for other password criteria via confirm windows
   var passLowerCase = confirm("Would you like to use lowercase?");
