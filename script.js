@@ -61,6 +61,11 @@ function generatePassword() {
   addCriteria(passNumbers, num);
   addCriteria(passSpecial, special);
 
+  //Verify that at least 1 criteria was selected. If none are alert user to try again making sure to select at least 1
+  if(passCriteria.length === 0){
+    alert("You did not select any criteria. Please try again and make sure to select at least 1 criteria.")
+    return "";
+  }
   var pass = "";
 
   //Randomly generate password
